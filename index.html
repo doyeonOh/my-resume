@@ -5,7 +5,12 @@
   <title>My-resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
 
   <!-- 1. Load libraries -->
   <!-- IE required polyfills, in this exact order -->
@@ -22,6 +27,7 @@
   <!-- 2. Configure SystemJS -->
   <script>
     System.config({
+      // defaultJSExtensions: true,
       packages: {
         app: {
           format: 'register',
@@ -39,5 +45,8 @@
 </head>
 <body>
   <my-app>Loding...</my-app>
+  <!--Import jQuery before materialize.js-->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 </body>
 </html>
