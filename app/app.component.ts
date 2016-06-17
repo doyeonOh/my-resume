@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { SkillsComponent } from './components/skills.component';
 import { TranslateElement } from './directives/translate-element';
+import { ImageZoomElement } from './directives/image-zoom-element';
 
 @Component({
   selector: 'my-app',
@@ -43,69 +44,82 @@ import { TranslateElement } from './directives/translate-element';
       </div>
     </section>
     <section translate-element #second="tfe" [startY]="-987" (mousewheel)="moveSection($event, first, second)" id="mid" style="z-index:8">
-      <div>
-        <h2 style="display:block; top:30%;left:30%;">
-          보유 기술
-        </h2>
-        <div style="position:absolute; left:30%; top:40%; width:20%;border-right: 1px solid #ccd0d4">
-          <div style="width:90%;">
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%;">
-                <p style="">Java</p>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 60%;">
-                <p style="">Javascript, jQuery</p>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 60%;">
-                <p style="">PostgreSQL</p>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 50%;">
-                <p style="">HTML, CSS</p>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 40%;">
-                <p style="">NodeJs</p>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 30%;">
-                <p style="">RasberryPi</p>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 40%;">
-                <p style="">Angular2</p>
+      <div style="position:absolute;left:30%; top:30%;">
+        <div style="position:relative; width:40%;float:left;">
+          <div>
+            <h2 style="display:block; position:relative;margin-bottom:1em;">
+              보유 기술
+            </h2>
+            <div style="position:relative;border-right: 1px solid #ccd0d4;margin-right:2em;">
+              <div style="width:90%;">
+                <div class="progress">
+                  <div class="progress-bar" style="width: 70%;">
+                    <p style="">Java</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 60%;">
+                    <p style="">Javascript, jQuery</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 60%;">
+                    <p style="">PostgreSQL</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 50%;">
+                    <p style="">HTML, CSS</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 40%;">
+                    <p style="">NodeJs</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 30%;">
+                    <p style="">RasberryPi</p>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 40%;">
+                    <p style="">Angular2</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+
         </div>
-        <h2 style="display:block; top:30%;left:52%;">
-          학력
-        </h2>
-        <div style="position:absolute; left:52%; top:40%; width:20%;">
-          <h3 style="display:block; line-height:1.5; ">
-            <p style="display:inline;"><b>제주대학교</b> <span style="font-size:0.5em;;text-align:right;">2006.3 ~ 2012.2</span></p>
-            <br>
-            <h5>컴퓨터 공학과 학사 졸업</h5>
-          </h3>
-          <p style="margin-top:2em;">
-            학과 내의 있는 SoftLab 에서 <b>안드로이드 프로젝트</b>를 주로 진행하였습니다. 그 중 4개의 App 을 퍼블리싱 하였습니다.
-          </p>
-          <p style="background: #fff">
-            |
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=softlab.jeju.ody1">올레길 App</a>,
-            <a target="_blank" href="https://www.tstore.co.kr/userpoc/apps/view?pid=0000252576">주역 App</a>,
-            <a target="_blank" href="https://www.tstore.co.kr/userpoc/apps/view?pid=0000256020">사주 App</a>,
-            <a target="_blank" href="https://www.tstore.co.kr/userpoc/apps/view?pid=0000256101">육효 App</a>
-          </p>
+        <div style="position:relative; width:40%;float:left;">
+          <div>
+            <h2 style="display:block;position:relative;margin-bottom:1em;">
+              학력
+            </h2>
+            <div style="position:relative;width:90%;">
+              <h3 style="display:block; line-height:1.5; ">
+                <p style="display:inline;"><b>제주대학교</b> <span style="font-size:0.5em;;text-align:right;">2006.3 ~ 2012.2</span></p>
+                <br>
+                <h5>컴퓨터 공학과 학사 졸업</h5>
+              </h3>
+              <p style="margin-top:2em;">
+                학과 내의 있는 SoftLab 에서 <b>안드로이드 프로젝트</b>를 주로 진행하였습니다. 그 중 4개의 App 을 퍼블리싱 하였습니다.
+              </p>
+              <p style="background: #fff">
+                |
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=softlab.jeju.ody1">올레길 App</a>,
+                <a target="_blank" href="https://www.tstore.co.kr/userpoc/apps/view?pid=0000252576">주역 App</a>,
+                <a target="_blank" href="https://www.tstore.co.kr/userpoc/apps/view?pid=0000256020">사주 App</a>,
+                <a target="_blank" href="https://www.tstore.co.kr/userpoc/apps/view?pid=0000256101">육효 App</a>
+              </p>
+            </div>
+          </div>
         </div>
+
+
+
       </div>
     </section>
     <section translate-element #third="tfe" [startY]="-987" (mousewheel)="moveSection($event, second, third)" id="third" style="z-index:7">
@@ -147,14 +161,14 @@ import { TranslateElement } from './directives/translate-element';
         <div style="position:absolute; top:30%; left:30%;float:left;">
           <div style="position:relative;display:block; padding-right:1em;width:25em;float:left;">
             <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="resources/img/portpolio/settle2.png">
+              <div class="card-image waves-block waves-light" style="cursor:pointer;">
+                <img img-zoom-element src="resources/img/portpolio/settle2.png">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">Sbook 재무회계 서비스<i class="material-icons right">more_vert</i></span>
                 <p><a href="#">사이트로 이동</a></p>
               </div>
-              <div class="card-reveal">
+              <div class="card-reveal"> 
                 <span class="card-title grey-text text-darken-4">Sbook 재무회계 서비스<i class="material-icons right">close</i></span>
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
               </div>
@@ -163,8 +177,8 @@ import { TranslateElement } from './directives/translate-element';
 
           <div style="position:relative;display:block;padding-right:1em;width:25em;float:left;">
             <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="resources/img/portpolio/imore2.png">
+              <div class="card-image waves-block waves-light" style="cursor:pointer;">
+                <img img-zoom-element src="resources/img/portpolio/imore2.png">
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">아이모아 서비스<i class="material-icons right">more_vert</i></span>
@@ -193,7 +207,7 @@ import { TranslateElement } from './directives/translate-element';
     </div>
   `,
   directives: [
-      TranslateElement
+      TranslateElement, ImageZoomElement
   ],
   styles: [`
     .progress{

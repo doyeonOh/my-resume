@@ -17,7 +17,6 @@ export class TranslateElement  {
     constructor(private _ab: AnimationBuilder, private _el: ElementRef) { }
 
     toggle(moveToTop:boolean = false) {
-      console.log(this._isRunning);
         if (!this._isRunning) {
             let animation = this._ab.css();
             animation.setDuration(300);
