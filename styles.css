@@ -4,3 +4,7 @@ body{
   background-size: cover;
   */
 }
+
+html{
+  font-family: "Roboto", sans-serif;
+}
