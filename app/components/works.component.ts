@@ -23,7 +23,7 @@ import { AnimationService } from '../services/animation.service';
             <p style="margin-top:6em;">
               유치원 통합 업무 서비스인 <b>아이모아 서비스</b>와 재무회계 서비스인 <b>Sbook 프로젝트</b>를 진행하였습니다.
             </p>
-            <p>
+            <p >
               - Java, Jsp/Servlet, Javascript 이용한 웹 페이지 개발
               <br>
               - DDL, DML 사용 및 프로시져 구현 (PostgreSQL)
@@ -32,11 +32,6 @@ import { AnimationService } from '../services/animation.service';
               <br>
               - 사내 여러 서비스 팀과 API 연계를 통한 협업
 
-            </p>
-            <p style="background: #fff">
-              |
-              <a target="_blank" href="https://www.imore.co.kr/">아이모아 서비스</a>,
-              <a target="_blank" href="https://www.bizplay.co.kr/main_0001_04.act">sbook 서비스(s재무회계)</a>
             </p>
           </div>
         </div>

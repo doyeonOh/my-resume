@@ -18,6 +18,7 @@ import { AnimationService } from '../services/animation.service';
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">Sbook 재무회계 서비스<i class="material-icons right">more_vert</i></span>
+                <p><a target="_blank" href="https://www.bizplay.co.kr/main_0001_04.act">사이트로 이동</a></p>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Sbook 재무회계 서비스<i class="material-icons right">close</i></span>
@@ -44,8 +45,9 @@ import { AnimationService } from '../services/animation.service';
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">아이모아 서비스<i class="material-icons right">more_vert</i></span>
-                <!--<p><a href="#">사이트로 이동</a></p> -->
+                <p><a target="_blank" href="https://www.imore.co.kr/">사이트로 이동</a></p>
               </div>
+
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">아이모아 서비스<i class="material-icons right">close</i></span>
                 <div class="grey-text text-darken-4" style="line-height: 1.4;">
