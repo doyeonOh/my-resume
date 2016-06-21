@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges } from 'angular2/core';
+import { Component, ViewChildren,  Input, OnChanges } from 'angular2/core';
 
 import { ImageZoomElement } from '../directives/image-zoom-element';
+import { AnimationService } from '../services/animation.service';
 
 @Component({
   selector: 'portpolio',
@@ -9,9 +10,9 @@ import { ImageZoomElement } from '../directives/image-zoom-element';
         <h2 class="portpolio-title" >
           포트폴리오
         </h2>
-        <div class="portpolio-content">
-          <div class="portpoilo-item">
-            <div class="card">
+        <div class="portpolio-content" #portpoilo_item>
+          <div class="portpoilo-item" >
+            <div class="card" >
               <div class="card-image waves-block waves-light" style="cursor:pointer;">
                 <img img-zoom-element src="resources/img/portpolio/settle2.png">
               </div>
@@ -85,9 +86,22 @@ export class PortpolioComponent implements OnChanges{
   @Input() id : string;
   @Input() currentFocusId : string;
 
+  @ViewChildren('portpoilo_item') items;
+
+  runAnimation : boolean = false;
+  constructor(
+    private _anim: AnimationService
+  ) {}
+
   ngOnChanges(){
-    if(this.currentFocusId === this.id){
-      console.log(this.currentFocusId);
+    if(this.currentFocusId === this.id && !this.runAnimation){
+      let count = 0;
+      this.items.forEach((item)=>{
+        count++;
+        let el = item.nativeElement;
+        this._anim.smoothAnimation(el, 300 * count);
+      });
+      this.runAnimation = true;
     }
   }
 }

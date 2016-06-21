@@ -4,7 +4,7 @@ import {AnimationBuilder} from 'angular2/src/animate/animation_builder';
 @Directive({
     selector: '[translate-element]',
     host: {
-      
+
     },
     inputs: ['startY', 'doStartInit', 'delay'],
     exportAs: 'tfe'
@@ -42,7 +42,7 @@ export class TranslateElement implements OnInit {
       }
     }
 
-    toggle(moveToTop:boolean = false) {
+    public toggle(moveToTop:boolean = false) {
         if (!this._isRunning) {
             let animation = this._ab.css();
             animation.setDuration(300);

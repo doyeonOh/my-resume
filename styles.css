@@ -8,3 +8,14 @@ body{
 html{
   font-family: "Roboto", sans-serif;
 }
+
+.animation_enter{
+  transform: translate(0px, -200px);
+  opacity: 0
+}
+
+.animation_active{
+  transform: translate(0px,0px);
+  transition: all ease-in 0.3s;
+  opacity: 1;
+}

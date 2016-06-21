@@ -1,7 +1,8 @@
-import { Component, ViewChild, OnInit, Input, OnChanges } from 'angular2/core';
+import { Component, ViewChildren, OnInit, Input, OnChanges } from 'angular2/core';
 
 
 import { TranslateElement } from '../directives/translate-element';
+import { AnimationService } from '../services/animation.service';
 
 
 @Component({
@@ -10,10 +11,10 @@ import { TranslateElement } from '../directives/translate-element';
       <div style="position:absolute;left:30%; top:30%;">
         <div class="area">
           <div>
-            <h2 translate-element #title1="tfe" [delay]="5" [doStartInit]="true" [startY]="-200" class="title">
+            <h2 class="title">
               보유 기술
             </h2>
-            <div class="progress-box">
+            <div class="progress-box" #item>
               <div style="width:90%;">
                 <div class="progress">
                   <div class="progress-bar" style="width: 70%;">
@@ -41,12 +42,12 @@ import { TranslateElement } from '../directives/translate-element';
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 30%;">
+                  <div class="progress-bar" style="width: 35%;">
                     <p style="">RasberryPi</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 40%;">
+                  <div class="progress-bar" style="width: 45%;">
                     <p style="">Angular2</p>
                   </div>
                 </div>
@@ -54,12 +55,12 @@ import { TranslateElement } from '../directives/translate-element';
             </div>
           </div>
         </div>
-        <div class="area">
+        <div class="area" >
           <div>
             <h2 class="title" >
               학력
             </h2>
-            <div class="edu-box">
+            <div class="edu-box" #item>
               <h3 class="edu-title">
                 <p style="display:inline;"><b>제주대학교</b> <span style="font-size:0.5em;;text-align:right;">2006.3 ~ 2012.2</span></p>
                 <br>
@@ -117,25 +118,30 @@ import { TranslateElement } from '../directives/translate-element';
     }
   `],
   directives: [ TranslateElement ]
-  // animations: [
-  //   trigger('test', [
-  //     state('on',style({opacity:1})),
-  //     state('off', style({opacity:0})),
-  //     transition('on => off', [ animate("1s")])
-  //   ])
-  // ]
 })
 
 export class SkillsComponent implements  OnChanges {
   @Input() id : string;
   @Input() currentFocusId : string;
 
-  @ViewChild('title1') title1;
+  @ViewChildren('item') items;
+
+  runAnimation : boolean = false;
+
+
+  constructor(
+    private _anim: AnimationService
+  ) {}
 
   ngOnChanges(){
-    if(this.currentFocusId === this.id){
-      console.log(this.title1);
-      this.title1.run();
+    if(this.currentFocusId === this.id && !this.runAnimation){
+      let count = 0;
+      this.items.forEach((item)=>{
+        count++;
+        let el = item.nativeElement;
+        this._anim.smoothAnimation(el, 300 * count);
+      });
+      this.runAnimation = true;
     }
   }
 }

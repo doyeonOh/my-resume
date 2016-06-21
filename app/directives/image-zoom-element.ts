@@ -30,6 +30,7 @@ export class ImageZoomElement{
   }
 
   clickElement(e){
+    e.stopPropagation(); // card의 click 이벤트가 자꾸 일어나서 .card overflow:hidden 됨
     this.toggle();
   }
 
@@ -40,6 +41,7 @@ export class ImageZoomElement{
     while (ancestor !== null  && ancestor.tagName !== "BODY" ) {
       var curr = ancestor;
       if (curr.style.overflow !== 'visible') {
+        console.log(curr);
         curr.style.overflow = 'visible';
         if (ancestorsChanged === undefined) {
           ancestorsChanged = curr;
@@ -137,6 +139,7 @@ export class ImageZoomElement{
         animationImage.setToStyles({
           transform : "translate(" + newLeft + "px," + newTop  + "px" + ") scale(" + newScaleX + "," + newScaleY + ")",
           position  : "absolute",
+          "border-radius" : "4px",
           "z-index" : 1000,
           opacity   : 1 }
         );

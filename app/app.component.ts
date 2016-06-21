@@ -6,7 +6,9 @@ import { SkillsComponent } from './components/skills.component';
 import { WorksComponent } from './components/works.component';
 import { PortpolioComponent } from './components/portpoilo.component';
 
-import { TranslateElement } from './directives/translate-element'; 
+import { TranslateElement } from './directives/translate-element';
+
+import { AnimationService } from './services/animation.service';
 
 @Component({
   selector: 'my-app',
@@ -48,6 +50,9 @@ import { TranslateElement } from './directives/translate-element';
   `,
   directives: [
       TranslateElement, MeComponent, SkillsComponent, WorksComponent, PortpolioComponent
+  ],
+  providers: [
+      AnimationService
   ],
   styles: [`
 

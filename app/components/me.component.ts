@@ -1,21 +1,22 @@
-import { Component, Input, OnInit, OnChanges } from 'angular2/core';
+import { Component, ViewChildren, Input, AfterViewInit, OnChanges } from 'angular2/core';
 
 import { TranslateElement } from '../directives/translate-element';
+import { AnimationService } from '../services/animation.service';
 
 @Component({
   selector: 'me',
   template: `
     <div style="position:absolute;left:33%;top:35%;">
-      <div translate-element [startY]="200" [doStartInit]="true" [delay]="1" class="left my-box">
+      <div #item class="left my-box">
 
       </div>
-      <div class="right">
-        <h2 translate-element [startY]="200" [doStartInit]="true" [delay]="2" class="right-top">
+      <div class="right" #item>
+        <h2 class="right-top">
           <b>오 도 연 | Doyeon Oh</b>
           <br>
           web developer
         </h2>
-        <div translate-element [startY]="200" [doStartInit]="true" [delay]="3" class="right-bottom">
+        <div class="right-bottom">
             <p>Email: odyody12@gmail.com</p>
             <p>facebook: odyody12@gmail.com</p>
             <p>gitHub: odyody12@gmail.com</p>
@@ -52,15 +53,33 @@ import { TranslateElement } from '../directives/translate-element';
   directives: [ TranslateElement ]
 })
 
-export class MeComponent implements OnChanges{
-  @Input()
-  id : string;
-  @Input()
-  currentFocusId : string;
+export class MeComponent implements AfterViewInit, OnChanges{
+  @Input() id : string;
+  @Input() currentFocusId : string;
+
+  @ViewChildren('item') items;
+
+  constructor(
+    private _anim : AnimationService
+  ) {}
 
   ngOnChanges(){
-    if(this.currentFocusId === this.id){
-      console.log(this.currentFocusId);
-    }
+    // if(this.currentFocusId === this.id){
+    //   let count = 0;
+    //   this.items.forEach((item)=>{
+    //     count++;
+    //     let el = item.nativeElement;
+    //     this._anim.smoothAnimation(el, 300 * count);
+    //   });
+    // }
+  }
+
+  ngAfterViewInit(){
+    let count = 0;
+    this.items.forEach((item)=>{
+      count++;
+      let el = item.nativeElement;
+      this._anim.smoothAnimation(el, 300 * count);
+    });
   }
 }
