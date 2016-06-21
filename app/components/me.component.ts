@@ -48,6 +48,10 @@ import { AnimationService } from '../services/animation.service';
       width:15em;
       height:15em;
       border: 1px solid white;
+      background-image: url('resources/img/mark/me2.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 15em 15em;
     }
   `],
   directives: [ TranslateElement ]
