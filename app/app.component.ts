@@ -20,7 +20,6 @@ import { AnimationService } from './services/animation.service';
           <li #nav>2</li>
           <li #nav>3</li>
           <li #nav>4</li>
-          <li #nav>5</li>
         </ul>
       </div>
     </nav>
@@ -33,12 +32,8 @@ import { AnimationService } from './services/animation.service';
     <section translate-element #third="tfe" [startY]="-987" (mousewheel)="moveSection($event, second, third)" id="third" style="z-index:7">
       <works [id]="3" [currentFocusId]="currentFocusId"></works>
     </section>
-    <section translate-element #fourth="tfe" [startY]="-987" (mousewheel)="moveSection($event, third, fourth)" id="fourth" style="z-index:6">
+    <section translate-element #fourth="tfe" [startY]="-987" (mousewheel)="moveSection($event, third, null)" id="fourth" style="z-index:6">
       <portpolio [id]="4" [currentFocusId]="currentFocusId"></portpolio>
-    </section>
-    <section translate-element #fifth="tfe" [startY]="-987" (mousewheel)="moveSection($event, fourth, fifth)" id="fifth" style="z-index:5">
-    </section>
-    <section translate-element #sixth="tfe" [startY]="-987" (mousewheel)="moveSection($event, fifth, null)" id="sixth" style="z-index:4">
     </section>
   `,
   directives: [

@@ -17,9 +17,9 @@ import { AnimationService } from '../services/animation.service';
           web developer
         </h2>
         <div class="right-bottom">
-            <p>Email: odyody12@gmail.com</p>
-            <p>facebook: odyody12@gmail.com</p>
-            <p>gitHub: odyody12@gmail.com</p>
+            <p><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://www.facebook.com/odyody12" target="_blank" style="color:white">@odyody12</a></p>
+            <p><i class="fa fa-github fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://github.com/doyeonOh" target="_blank" style="color:white">@doyeonOh</a></p>
+            <p><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;odyody12@gmail.com</p>
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@ import { AnimationService } from '../services/animation.service';
     .right-top{
       display:block;
       position:relative;
-      margin-top:0.5em;
-      margin-bottom:2em;
+      margin-top: 0.1em;
+      margin-bottom:1em;
     }
     .right-bottom{
       position:relative;
