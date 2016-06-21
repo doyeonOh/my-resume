@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges } from 'angular2/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 import { TranslateElement } from '../directives/translate-element';
 

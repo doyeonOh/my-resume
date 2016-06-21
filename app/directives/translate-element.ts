@@ -1,10 +1,9 @@
-import { Directive, OnInit, ElementRef } from 'angular2/core';
-import {AnimationBuilder} from 'angular2/src/animate/animation_builder';
+import { Directive, OnInit, ElementRef } from '@angular/core';
 
 @Directive({
     selector: '[translate-element]',
     host: {
-      
+
     },
     inputs: ['startY', 'doStartInit', 'delay'],
     exportAs: 'tfe'
@@ -16,13 +15,15 @@ export class TranslateElement implements OnInit {
     public doStartInit:Boolean = false;
     private _isRunning: Boolean = false;
 
+    ngOnInit(){
+      // if(this.doStartInit){
+      //   this.toggle();
+      // }
+    }
+    /*
     constructor(private _ab: AnimationBuilder, private _el: ElementRef) { }
 
-    ngOnInit(){
-      if(this.doStartInit){
-        this.toggle();
-      }
-    }
+
 
     run(){
       if (!this._isRunning) {
@@ -63,4 +64,5 @@ export class TranslateElement implements OnInit {
             });
         }
     }
+    */
 }

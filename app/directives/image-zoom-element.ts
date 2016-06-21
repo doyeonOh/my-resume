@@ -1,5 +1,5 @@
-import { Directive, ElementRef } from 'angular2/core';
-import {AnimationBuilder} from 'angular2/src/animate/animation_builder';
+import { Directive, ElementRef } from '@angular/core';
+// import {AnimationBuilder} from '@angular/platform-broswer';
 
 @Directive({
   selector: '[img-zoom-element]',
@@ -14,6 +14,8 @@ export class ImageZoomElement{
   private _isRunning: Boolean = false;
   private _isDisplayed: Boolean = false;
 
+
+  /*
   constructor(private _ab: AnimationBuilder, private _el: ElementRef) {
     this.setPlaceholder();
   }
@@ -226,4 +228,5 @@ export class ImageZoomElement{
         node.remove();
     }
   }
+  */
 }

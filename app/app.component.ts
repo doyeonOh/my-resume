@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewChild } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MeComponent } from './components/me.component';
 import { SkillsComponent } from './components/skills.component';
 import { WorksComponent } from './components/works.component';
 import { PortpolioComponent } from './components/portpoilo.component';
 
-import { TranslateElement } from './directives/translate-element'; 
+import { TranslateElement } from './directives/translate-element';
 
 @Component({
   selector: 'my-app',
