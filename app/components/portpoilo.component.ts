@@ -21,7 +21,7 @@ import { AnimationService } from '../services/animation.service';
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Sbook 재무회계 서비스<i class="material-icons right">close</i></span>
-                <div class="grey-text text-darken-4">
+                <div class="grey-text text-darken-4" style="line-height: 1.4;">
                   <p style="text-align:right;">2014.1 ~ 2015.9</p>
                   <p><b>개요</b></p>
                   회계 전문인력이 없어도 증빙의 자동전표화로 분개장에서 결산 그리고 부가세 신고까지 원스톱으로 진행되는 차별화된 중소기업 맞춤형 회계 App 입니다.<br><br>
@@ -48,7 +48,7 @@ import { AnimationService } from '../services/animation.service';
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">아이모아 서비스<i class="material-icons right">close</i></span>
-                <div class="grey-text text-darken-4">
+                <div class="grey-text text-darken-4" style="line-height: 1.4;">
                   <p style="text-align:right;">2013.1 ~ 2013.12</p>
                   <p><b>개요</b></p>
                   아이모아는 유치원을 위한 회계, 원아, 금융 등의 복잡한 업무를 효율적으로 관리 ​할 수 있게 제공하는 서비스입니다.<br><br>
@@ -62,6 +62,9 @@ import { AnimationService } from '../services/animation.service';
                 </div>
               </div>
             </div>
+          </div>
+          <div class="portpolio-item" style="text-align: right;margin-right: 1em;">
+            <input class="btn btn-danger" type="button" value="그 외..(업데이트 예정)" onClick="window.open('http://ody12.tistory.com/category/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4','_blank');" />
           </div>
         </div>
       </div>

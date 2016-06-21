@@ -20,7 +20,7 @@ import { AnimationService } from '../services/animation.service';
             </h3>
           </div>
           <div style="position:relative;">
-            <p style="margin-top:2em;">
+            <p style="margin-top:6em;">
               유치원 통합 업무 서비스인 <b>아이모아 서비스</b>와 재무회계 서비스인 <b>Sbook 프로젝트</b>를 진행하였습니다.
             </p>
             <p>
