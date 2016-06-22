@@ -1,0 +1,26 @@
+.left_item{
+  position:relative;
+  float:left;
+  margin:1em;
+}
+.right_item{
+  position:relative;
+  float:left;
+  margin:1em;
+}
+.right-top{
+  margin-top: 0.1em;
+  margin-bottom:1em;
+}
+.right-bottom{
+  line-height:1.1;
+}
+.my-box{
+  width:15em;
+  height:15em;
+  border: 1px solid white;
+  background-image: url('resources/img/mark/me2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15em 15em;
+}

@@ -1,0 +1,23 @@
+.work{
+  position:relative; width:70%;float:left;
+}
+
+.work_title{
+  display:block; position:relative;margin-bottom:1em;
+}
+
+.work_content{
+  position:relative;width:100%;float:left;
+}
+
+.work_item_top{
+  position:relative;min-width:470px;
+}
+
+.work_item_ci{
+  border-radius:4px;float:left;margin-right:1em;
+}
+
+.work_item_title{
+  display:block; line-height:1.5;float:left;
+}

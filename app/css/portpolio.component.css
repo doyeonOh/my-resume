@@ -1,0 +1,11 @@
+.portpolio-title{
+  position:relative;display:block;
+}
+
+.portpolio-content{
+  margin-top:2em;float:left;
+}
+
+.portpoilo-item{
+  position:relative; padding-right:1em;width:30em;float:left;
+}

@@ -1,0 +1,43 @@
+.progress{
+  height:30px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #E4E7EB;
+}
+.progress-bar{
+  background-color: #E82C0C;
+  height: 100%;
+  text-indent:1em;
+  line-height:30px;
+  text-tranform: uppercase;
+
+}
+.title{
+  display:block; position:relative;margin-bottom:1em;
+}
+
+.area{
+  position:relative; width:40%;float:left;
+}
+
+.progress-box{
+  position:relative;border-right: 1px solid #ccd0d4;margin-right:2em;
+}
+.edu-box{
+  position:relative;width:90%;
+}
+
+.edu-title{
+  display:block; line-height:1.5;
+}
+
+.filled_enter{
+  width:0%;
+    transition: all ease-in 0.3s;
+}
+
+.filled_active{
+  transition: all ease-in 1.0s;
+}
