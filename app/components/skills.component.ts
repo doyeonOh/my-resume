@@ -17,37 +17,37 @@ import { AnimationService } from '../services/animation.service';
             <div class="progress-box" #item>
               <div style="width:90%;">
                 <div class="progress">
-                  <div class="progress-bar" style="width: 70%;">
+                  <div #skill class="progress-bar">
                     <p style="">Java</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 60%;">
+                  <div #skill class="progress-bar">
                     <p style="">Javascript, jQuery</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 60%;">
+                  <div #skill class="progress-bar">
                     <p style="">PostgreSQL</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 50%;">
+                  <div #skill class="progress-bar">
                     <p style="">HTML, CSS</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 40%;">
+                  <div #skill class="progress-bar">
                     <p style="">NodeJs</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 35%;">
+                  <div #skill class="progress-bar">
                     <p style="">RasberryPi</p>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar" style="width: 45%;">
+                  <div #skill class="progress-bar">
                     <p style="">Angular2</p>
                   </div>
                 </div>
@@ -116,6 +116,15 @@ import { AnimationService } from '../services/animation.service';
     .edu-title{
       display:block; line-height:1.5;
     }
+
+    .filled_enter{
+      width:0%;
+        transition: all ease-in 0.3s;
+    }
+
+    .filled_active{
+      transition: all ease-in 1.0s;
+    }
   `],
   directives: [ TranslateElement ]
 })
@@ -125,9 +134,12 @@ export class SkillsComponent implements  OnChanges {
   @Input() currentFocusId : string;
 
   @ViewChildren('item') items;
+  @ViewChildren('skill') skills;
 
   runAnimation : boolean = false;
-
+  skillPersents : Array<number> = [
+    70, 60, 60, 50, 40, 35, 45
+  ];
 
   constructor(
     private _anim: AnimationService
@@ -135,13 +147,17 @@ export class SkillsComponent implements  OnChanges {
 
   ngOnChanges(){
     if(this.currentFocusId === this.id && !this.runAnimation){
-      let count = 0;
-      this.items.forEach((item)=>{
-        count++;
+      this.items.forEach((item, index)=>{
         let el = item.nativeElement;
-        this._anim.smoothAnimation(el, 300 * count);
+        this._anim.smoothAnimation(el, 300 * ( index + 1 ));
       });
+      this.skills.forEach((item, index)=>{
+        let el = item.nativeElement;
+        this._anim.filledAnimation(el, this.skillPersents[index], 600 );
+      });
+
       this.runAnimation = true;
     }
+
   }
 }

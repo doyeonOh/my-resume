@@ -161,7 +161,6 @@ export class AppComponent implements OnInit{
     this.navItems.forEach((item)=>{
         item.nativeElement.classList.remove('active');
         if(item.nativeElement.innerText == focusId){
-          console.log("hi");
           item.nativeElement.classList.add('active');
         }
     });

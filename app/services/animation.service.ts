@@ -10,4 +10,10 @@ export class AnimationService{
     el.classList.add("animation_enter");
     setTimeout(()=>{el.classList.add("animation_active")}, duration)
   }
+
+  filledAnimation(el, ratio, duration){
+    el.classList.remove("filled_active");
+    el.classList.add("filled_enter");
+    setTimeout(()=>{el.classList.add("filled_active"); el.style.width = ratio + "%";}, duration)
+  }
 }

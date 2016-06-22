@@ -80,11 +80,9 @@ export class WorksComponent implements OnChanges{
 
   ngOnChanges(){
     if(this.currentFocusId === this.id && !this.runAnimation){
-      let count = 0;
-      this.items.forEach((item)=>{
-        count++;
+      this.items.forEach((item, index)=>{
         let el = item.nativeElement;
-        this._anim.smoothAnimation(el, 300 * count);
+        this._anim.smoothAnimation(el, 300 * ( index + 1 ));
       });
       this.runAnimation = true;
     }

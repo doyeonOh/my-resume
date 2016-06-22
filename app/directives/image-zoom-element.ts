@@ -41,7 +41,6 @@ export class ImageZoomElement{
     while (ancestor !== null  && ancestor.tagName !== "BODY" ) {
       var curr = ancestor;
       if (curr.style.overflow !== 'visible') {
-        console.log(curr);
         curr.style.overflow = 'visible';
         if (ancestorsChanged === undefined) {
           ancestorsChanged = curr;
@@ -179,7 +178,6 @@ export class ImageZoomElement{
 
       // 번쩍 거리는 현상있어서 overlay 주석처리
       // animationOverlay.start(overlay).onComplete(() => {
-      //   console.log("good");
       // });
     }
   }
