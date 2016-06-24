@@ -9,3 +9,61 @@
 .portpoilo-item{
   position:relative; padding-right:1em;width:30em;float:left;
 }
+
+.main_portpolio{
+  width: 960px;height: 50%;
+}
+
+@media only screen and (max-width: 480px) {
+  .main_portpolio{
+    width: 300px;;height: 95%;
+  }
+  .portpolio-content{
+    clear:both;
+    margin-top:1em;
+  }
+  .portpoilo-item{
+    width:18em;
+    padding-right: 0;
+  }
+  .card .card_content{
+    padding: 8px;
+  }
+  .card .card-title {
+    font-size: 18px;
+  }
+  .card .card-content .card-title {
+    line-height: 5px;
+  }
+  h2{ font-size:1.5rem;;}
+  h3 { font-size:1.3rem; }
+
+}
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  .main_portpolio{
+    width: 300px;;height: 85%;
+  }
+  .portpolio-content{
+    clear:both;
+    margin-top:1em;
+  }
+  .portpoilo-item{
+    width:18em;
+    padding-right: 0;
+    clear:both;
+  }
+  .card .card_content{
+    padding: 8px;
+  }
+  .card .card-title {
+    font-size: 18px;
+  }
+  .card .card-content .card-title {
+    line-height: 5px;
+  }
+  h2{ font-size:1.5rem;;}
+  h3 { font-size:1.3rem; }
+
+}
+@media only screen and (min-width: 801px) {
+}
