@@ -89,13 +89,13 @@ nav ul li{
 @media only screen and (max-width: 480px) {
   section{
     position:relative;
-    height:600px;
+    height:40em;
   }
   section#first{
-    height: 550px;
+    height: 38em;
   }
   section#fourth{
-    height:750px;
+    height:50em;
   }
   nav{
     visibility: hidden;
