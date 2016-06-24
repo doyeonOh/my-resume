@@ -12,6 +12,11 @@ html{
   font-family: "Roboto", sans-serif;
 }
 
+.main{
+  position: absolute;left: 0;top: 0;margin: auto;right: 0;bottom: 0;
+}
+
+
 .animation_enter{
   transform: translate(0px, -200px);
   opacity: 0

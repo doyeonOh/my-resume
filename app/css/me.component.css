@@ -24,23 +24,21 @@
   background-position: center;
   background-size: 15em 15em;
 }
-.main{
-  position: absolute;left: 0;top: 0;margin: auto;right: 0;bottom: 0;
-}
+
 
 .main_me{
   width: 620px;height: 27%;
 }
 
 @media only screen and (max-width: 480px) {
-  .left_item{  float:left;  }
+  .left_item{  clear:both;  }
   .right_item{  clear:both;  }
   .main_me  { width:275px; height:70%;}
   h2{ font-size:1.5rem;;}
   .fa-2x{ font-size: 1rem;}
 }
 @media only screen and (min-width: 481px) and (max-width: 800px) {
-  .left_item{  float:left;  }
+  .left_item{  clear:both;  }
   .right_item{  clear:both;  }
   .main_me  { width:275px; height:60%;}
 }
