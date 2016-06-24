@@ -26,6 +26,9 @@ export class AppComponent implements OnInit{
 
   @ViewChildren('nav') navItems;
 
+  _isMovingSection : boolean = false;
+  _movingDelay : number = 500;
+
   public currentFocusId : string = 'first';
   public focusOn : Object = {
     'first' : 1, 'second' : 2, 'third': 3, 'fourth' : 4, 'fifth' : 5, 'sixth' : 6
@@ -33,6 +36,11 @@ export class AppComponent implements OnInit{
 
   moveSection(e, prev, next){
     let moveToTop = e.deltaY > 0;
+
+    if(this._isMovingSection){
+      return ;
+    }
+
     if(moveToTop && next){
       next.toggle(moveToTop);
       this.currentFocusId = this.focusOn[next._el.nativeElement.id] + 1;
@@ -42,15 +50,21 @@ export class AppComponent implements OnInit{
     }
     // 우측 네비게이터 업데이트
     this.updateNavigator(this.currentFocusId);
+
+    this._isMovingSection = true;
+    setTimeout(()=>{ this._isMovingSection = false; }, this._movingDelay);
   }
 
   updateNavigator(focusId){
+
+
     this.navItems.forEach((item)=>{
         item.nativeElement.classList.remove('active');
         if(item.nativeElement.innerText == focusId){
           item.nativeElement.classList.add('active');
         }
     });
+
   }
   ngOnInit(){
 
