@@ -33,7 +33,7 @@
 @media only screen and (max-width: 480px) {
   .left_item{  clear:both;  }
   .right_item{  clear:both;  }
-  .main_me  { width:275px; height:70%;}
+  .main_me  { width:275px; height:85%;}
   h2{ font-size:1.5rem;;}
   .fa-2x{ font-size: 1rem;}
 }
@@ -43,7 +43,7 @@
   .main_me  { width:275px; height:60%;}
 }
 @media only screen and (min-width: 801px) {
-  .main_me{
+  .main_me{  
     width: 620px;height: 27%;
   }
 }

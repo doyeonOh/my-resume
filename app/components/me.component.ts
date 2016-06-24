@@ -13,6 +13,7 @@ import { AnimationService } from '../services/animation.service';
 export class MeComponent implements AfterViewInit, OnChanges{
   @Input() id : string;
   @Input() currentFocusId : string;
+  // @Input() onAnim : boolean;
 
   @ViewChildren('item') items;
 
@@ -21,14 +22,6 @@ export class MeComponent implements AfterViewInit, OnChanges{
   ) {}
 
   ngOnChanges(){
-    // if(this.currentFocusId === this.id){
-    //   let count = 0;
-    //   this.items.forEach((item)=>{
-    //     count++;
-    //     let el = item.nativeElement;
-    //     this._anim.smoothAnimation(el, 300 * count);
-    //   });
-    // }
   }
 
   ngAfterViewInit(){

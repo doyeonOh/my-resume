@@ -12,6 +12,7 @@ import { AnimationService } from '../services/animation.service';
 export class WorksComponent implements OnChanges{
   @Input() id : string;
   @Input() currentFocusId: string;
+  // @Input() onAnim : boolean;
 
   @ViewChildren('item') items;
 

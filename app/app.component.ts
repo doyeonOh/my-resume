@@ -17,6 +17,9 @@ import { AnimationService } from './services/animation.service';
   directives: [
       TranslateElement, MeComponent, SkillsComponent, WorksComponent, PortpolioComponent
   ],
+  host: {
+    "(window:scroll)" : "onScroll($event)"
+  },
   providers: [
       AnimationService
   ],
@@ -26,17 +29,35 @@ export class AppComponent implements OnInit{
 
   @ViewChildren('nav') navItems;
 
+  @ViewChild('first') firstSection;
+  @ViewChild('second') secondSection;
+
   _isMovingSection : boolean = false;
   _movingSectionDelay : number = 500;
+
+  public onFirstAnim   = false;
+  public onSecondAnim  = false;
+  public onThirdAnim   = false;
+  public onFourthAnim  = false;
 
   public currentFocusId : string = 'first';
   public focusOn : Object = {
     'first' : 1, 'second' : 2, 'third': 3, 'fourth' : 4, 'fifth' : 5, 'sixth' : 6
   };
 
+  isMobile(){
+    if(document.body.clientWidth < 800){
+      // 모바일 기기
+      if(document.body.clientWidth <= 480){
+        return true;
+      }
+    }
+    return false;
+  }
   moveSection(e, prev, next){
     let moveToTop = e.deltaY > 0;
 
+    if (this.isMobile()) return ;
     if(this._isMovingSection){
       return ;
     }
@@ -63,6 +84,23 @@ export class AppComponent implements OnInit{
         }
     });
   }
+  // mobile 전용
+  onScroll(e){
+    if(this.isMobile()){
+
+      let currentScrollTop = document.body.scrollTop;
+
+      if(currentScrollTop >= 100 && !this.onSecondAnim){
+        this.onSecondAnim = true;
+      }
+      // else if(currentScrollTop >= 900 && !this.onThirdAnim){
+      //   this.onThirdAnim = true;
+      // }else if(currentScrollTop >= 900 && !this.onFourthAnim){
+      //   this.onFourthAnim = true;
+      // }
+    }
+  }
+
   ngOnInit(){
 
   }

@@ -15,6 +15,7 @@ import { AnimationService } from '../services/animation.service';
 export class SkillsComponent implements  OnChanges {
   @Input() id : string;
   @Input() currentFocusId : string;
+  @Input() onAnim : boolean;
 
   @ViewChildren('item') items;
   @ViewChildren('skill') skills;
@@ -28,8 +29,8 @@ export class SkillsComponent implements  OnChanges {
     private _anim: AnimationService
   ) {}
 
-  ngOnChanges(){
-    if(this.currentFocusId === this.id && !this.runAnimation){
+  ngOnChanges(change){
+    if((this.onAnim && !this.runAnimation) || (this.currentFocusId === this.id && !this.runAnimation)){
       this.items.forEach((item, index)=>{
         let el = item.nativeElement;
         this._anim.smoothAnimation(el, 300 * ( index + 1 ));

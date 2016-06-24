@@ -12,6 +12,7 @@ import { AnimationService } from '../services/animation.service';
 export class PortpolioComponent implements OnChanges{
   @Input() id : string;
   @Input() currentFocusId : string;
+  // @Input() onAnim : boolean;
 
   @ViewChildren('portpoilo_item') items;
 

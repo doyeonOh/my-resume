@@ -85,3 +85,26 @@ nav ul li{
   cursor: pointer;
   list-style-position: inside;
 }
+
+@media only screen and (max-width: 480px) {
+  section{
+    position:relative;
+    height:600px;
+  }
+  section#first{
+    height: 550px;
+  }
+  section#fourth{
+    height:750px;
+  }
+  nav{
+    visibility: hidden;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  nav ul li{
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 801px) {
+}

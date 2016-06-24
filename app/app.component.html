@@ -1,18 +1,18 @@
 <nav style="z-index:15;">
   <div>
     <ul>
-      <li #nav class="active">1</li>
-      <li #nav>2</li>
-      <li #nav>3</li>
-      <li #nav>4</li>
+      <li #nav class="active" (click)="clickNavigator($event)">1</li>
+      <li #nav (click)="clickNavigator($event)">2</li>
+      <li #nav (click)="clickNavigator($event)">3</li>
+      <li #nav (click)="clickNavigator($event)">4</li>
     </ul>
   </div>
 </nav>
-<section translate-element #first="tfe" [startY]="-987" (mousewheel)="moveSection($event, null, first);" id="first" style="z-index:9;">
+<section translate-element #first="tfe" [startY]="-987" (mousewheel)="moveSection($event, null, first);"  id="first" style="z-index:9;">
   <me [id]="1" [currentFocusId]="currentFocusId"></me>
 </section>
 <section translate-element #second="tfe" [startY]="-987" (mousewheel)="moveSection($event, first, second)" id="second" style="z-index:8">
-  <skills [id]="2" [currentFocusId]="currentFocusId"></skills>
+  <skills [id]="2" [currentFocusId]="currentFocusId" [onAnim]="onSecondAnim" ></skills>
 </section>
 <section translate-element #third="tfe" [startY]="-987" (mousewheel)="moveSection($event, second, third)" id="third" style="z-index:7">
   <works [id]="3" [currentFocusId]="currentFocusId"></works>
