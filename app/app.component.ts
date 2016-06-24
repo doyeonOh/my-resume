@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
   @ViewChildren('nav') navItems;
 
   _isMovingSection : boolean = false;
-  _movingDelay : number = 500;
+  _movingSectionDelay : number = 500;
 
   public currentFocusId : string = 'first';
   public focusOn : Object = {
@@ -52,19 +52,16 @@ export class AppComponent implements OnInit{
     this.updateNavigator(this.currentFocusId);
 
     this._isMovingSection = true;
-    setTimeout(()=>{ this._isMovingSection = false; }, this._movingDelay);
+    setTimeout(()=>{ this._isMovingSection = false; }, this._movingSectionDelay);
   }
 
   updateNavigator(focusId){
-
-
     this.navItems.forEach((item)=>{
         item.nativeElement.classList.remove('active');
         if(item.nativeElement.innerText == focusId){
           item.nativeElement.classList.add('active');
         }
     });
-
   }
   ngOnInit(){
 
