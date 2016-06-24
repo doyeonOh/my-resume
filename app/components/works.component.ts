@@ -12,7 +12,7 @@ import { AnimationService } from '../services/animation.service';
 export class WorksComponent implements OnChanges{
   @Input() id : string;
   @Input() currentFocusId: string;
-  // @Input() onAnim : boolean;
+  @Input() onAnim : boolean;
 
   @ViewChildren('item') items;
 
@@ -23,7 +23,7 @@ export class WorksComponent implements OnChanges{
   ) {}
 
   ngOnChanges(){
-    if(this.currentFocusId === this.id && !this.runAnimation){
+    if((this.onAnim && !this.runAnimation) || (this.currentFocusId === this.id && !this.runAnimation)){
       this.items.forEach((item, index)=>{
         let el = item.nativeElement;
         this._anim.smoothAnimation(el, 300 * ( index + 1 ));

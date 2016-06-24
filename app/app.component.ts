@@ -89,15 +89,14 @@ export class AppComponent implements OnInit{
     if(this.isMobile()){
 
       let currentScrollTop = document.body.scrollTop;
-
-      if(currentScrollTop >= 100 && !this.onSecondAnim){
+      console.log(currentScrollTop);
+      if(currentScrollTop >= 50 && !this.onSecondAnim){
         this.onSecondAnim = true;
+      }else if(currentScrollTop >= 670 && !this.onThirdAnim){
+        this.onThirdAnim = true;
+      }else if(currentScrollTop >= 1170 && !this.onFourthAnim){
+        this.onFourthAnim = true;
       }
-      // else if(currentScrollTop >= 900 && !this.onThirdAnim){
-      //   this.onThirdAnim = true;
-      // }else if(currentScrollTop >= 900 && !this.onFourthAnim){
-      //   this.onFourthAnim = true;
-      // }
     }
   }
 

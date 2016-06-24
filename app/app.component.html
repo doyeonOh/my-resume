@@ -15,8 +15,8 @@
   <skills [id]="2" [currentFocusId]="currentFocusId" [onAnim]="onSecondAnim" ></skills>
 </section>
 <section translate-element #third="tfe" [startY]="-987" (mousewheel)="moveSection($event, second, third)" id="third" style="z-index:7">
-  <works [id]="3" [currentFocusId]="currentFocusId"></works>
+  <works [id]="3" [currentFocusId]="currentFocusId" [onAnim]="onThirdAnim"></works>
 </section>
 <section translate-element #fourth="tfe" [startY]="-987" (mousewheel)="moveSection($event, third, null)" id="fourth" style="z-index:6">
-  <portpolio [id]="4" [currentFocusId]="currentFocusId"></portpolio>
+  <portpolio [id]="4" [currentFocusId]="currentFocusId" [onAnim]="onFourthAnim"></portpolio>
 </section>
