@@ -21,3 +21,38 @@
 .work_item_title{
   display:block; line-height:1.5;float:left;
 }
+
+.main_works{
+  width: 500px;height: 33%;
+}
+
+.work_mid_text{
+  margin-top:6em;
+}
+
+@media only screen and (max-width: 480px) {
+  .main_works{
+    width: 320px;height: 70%;
+  }
+  h2{ font-size:1.5rem;;}
+  h3 { font-size:1.3rem; }
+  .work{ width:94%; }
+
+  .work_item_ci{ width:100px; margin-right:0.4rem;}
+  .work_mid_text{ margin-top: 5em;}
+  .work_item_title{ }
+}
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  .main_works{
+    width: 320px;height: 70%;
+  }
+  h2{ font-size:1.5rem;;}
+  h3 { font-size:1.3rem; }
+  .work{ width:94%; }
+
+  .work_item_ci{ width:100px; margin-right:0.4rem;}
+  .work_mid_text{ margin-top: 5em;}
+  .work_item_title{ }
+}
+@media only screen and (min-width: 801px) {
+}
