@@ -1,4 +1,4 @@
-import { Component, ViewChildren, OnInit, ViewChild } from 'angular2/core';
+import { Component, ViewChildren, ViewChild } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { MeComponent } from './components/me.component';
@@ -25,25 +25,21 @@ import { AnimationService } from './services/animation.service';
   ],
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent {
 
   @ViewChildren('nav') navItems;
 
-  @ViewChild('first') firstSection;
-  @ViewChild('second') secondSection;
+  _canMoveSection : boolean = true;
+  _moveSectionDelay : number = 600;
+  _focusOn : Object = {
+    'first' : 1, 'second' : 2, 'third': 3, 'fourth' : 4
+  };
 
-  _isMovingSection : boolean = false;
-  _movingSectionDelay : number = 500;
-
-  public onFirstAnim   = false;
-  public onSecondAnim  = false;
-  public onThirdAnim   = false;
-  public onFourthAnim  = false;
+  public displaySecondAnim  = false;
+  public displayThirdAnim   = false;
+  public displayFourthAnim  = false;
 
   public currentFocusId : string = 'first';
-  public focusOn : Object = {
-    'first' : 1, 'second' : 2, 'third': 3, 'fourth' : 4, 'fifth' : 5, 'sixth' : 6
-  };
 
   isMobile(){
     if(document.body.clientWidth < 800){
@@ -51,29 +47,28 @@ export class AppComponent implements OnInit{
       if(document.body.clientWidth <= 480){
         return true;
       }
+      // 태블릿
     }
     return false;
   }
+
   moveSection(e, prev, next){
     let moveToTop = e.deltaY > 0;
 
-    if (this.isMobile()) return ;
-    if(this._isMovingSection){
-      return ;
-    }
+    if(this.isMobile() || this._canMoveSection == false) return ;
 
     if(moveToTop && next){
       next.toggle(moveToTop);
-      this.currentFocusId = this.focusOn[next._el.nativeElement.id] + 1;
+      this.currentFocusId = this._focusOn[next._el.nativeElement.id] + 1;
     }else if(!moveToTop && prev){
       prev.toggle(moveToTop);
-      this.currentFocusId = this.focusOn[prev._el.nativeElement.id];
+      this.currentFocusId = this._focusOn[prev._el.nativeElement.id];
     }
     // 우측 네비게이터 업데이트
     this.updateNavigator(this.currentFocusId);
 
-    this._isMovingSection = true;
-    setTimeout(()=>{ this._isMovingSection = false; }, this._movingSectionDelay);
+    this._canMoveSection = false;
+    setTimeout(()=>{ this._canMoveSection = true; }, this._moveSectionDelay);
   }
 
   updateNavigator(focusId){
@@ -84,23 +79,19 @@ export class AppComponent implements OnInit{
         }
     });
   }
+
   // mobile 전용
   onScroll(e){
     if(this.isMobile()){
-
       let currentScrollTop = document.body.scrollTop;
-      console.log(currentScrollTop);
-      if(currentScrollTop >= 50 && !this.onSecondAnim){
-        this.onSecondAnim = true;
-      }else if(currentScrollTop >= 670 && !this.onThirdAnim){
-        this.onThirdAnim = true;
-      }else if(currentScrollTop >= 1170 && !this.onFourthAnim){
-        this.onFourthAnim = true;
+
+      if(currentScrollTop >= 50 && !this.displaySecondAnim){
+        this.displaySecondAnim = true;
+      }else if(currentScrollTop >= 670 && !this.displayThirdAnim){
+        this.displayThirdAnim = true;
+      }else if(currentScrollTop >= 1170 && !this.displayFourthAnim){
+        this.displayFourthAnim = true;
       }
     }
-  }
-
-  ngOnInit(){
-
   }
 }

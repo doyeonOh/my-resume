@@ -20,8 +20,8 @@ export class SkillsComponent implements  OnChanges {
   @ViewChildren('item') items;
   @ViewChildren('skill') skills;
 
-  runAnimation : boolean = false;
-  skillPersents : Array<number> = [
+  _displayed : boolean = false;
+  _skillPersents : Array<number> = [
     70, 60, 60, 50, 40, 35, 45
   ];
 
@@ -30,18 +30,18 @@ export class SkillsComponent implements  OnChanges {
   ) {}
 
   ngOnChanges(change){
-    if((this.onAnim && !this.runAnimation) || (this.currentFocusId === this.id && !this.runAnimation)){
-      this.items.forEach((item, index)=>{
-        let el = item.nativeElement;
-        this._anim.smoothAnimation(el, 300 * ( index + 1 ));
-      });
-      this.skills.forEach((item, index)=>{
-        let el = item.nativeElement;
-        this._anim.filledAnimation(el, this.skillPersents[index], 600 );
-      });
-
-      this.runAnimation = true;
+    if(this.onAnim || this.currentFocusId === this.id){
+      if(this._displayed == false){
+        this.items.forEach((item, index)=>{
+          let el = item.nativeElement;
+          this._anim.smoothAnimation(el, 300 * ( index + 1 ));
+        });
+        this.skills.forEach((item, index)=>{
+          let el = item.nativeElement;
+          this._anim.filledAnimation(el, this._skillPersents[index], 600 );
+        });
+        this._displayed = true;
+      }
     }
-
   }
 }

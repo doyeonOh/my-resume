@@ -16,19 +16,21 @@ export class WorksComponent implements OnChanges{
 
   @ViewChildren('item') items;
 
-  runAnimation : boolean = false;
+  _displayed : boolean = false;
 
   constructor(
     private _anim: AnimationService
   ) {}
 
   ngOnChanges(){
-    if((this.onAnim && !this.runAnimation) || (this.currentFocusId === this.id && !this.runAnimation)){
-      this.items.forEach((item, index)=>{
-        let el = item.nativeElement;
-        this._anim.smoothAnimation(el, 300 * ( index + 1 ));
-      });
-      this.runAnimation = true;
+    if(this.onAnim || this.currentFocusId === this.id){
+      if(this._displayed == false){
+        this.items.forEach((item, index)=>{
+          let el = item.nativeElement;
+          this._anim.smoothAnimation(el, 300 * ( index + 1 ));
+        });
+        this._displayed = true;
+      }
     }
   }
 }

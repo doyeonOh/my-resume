@@ -12,11 +12,11 @@
   <me [id]="1" [currentFocusId]="currentFocusId"></me>
 </section>
 <section translate-element #second="tfe" [startY]="-987" (mousewheel)="moveSection($event, first, second)" id="second" style="z-index:8">
-  <skills [id]="2" [currentFocusId]="currentFocusId" [onAnim]="onSecondAnim" ></skills>
+  <skills [id]="2" [currentFocusId]="currentFocusId" [onAnim]="displaySecondAnim" ></skills>
 </section>
 <section translate-element #third="tfe" [startY]="-987" (mousewheel)="moveSection($event, second, third)" id="third" style="z-index:7">
-  <works [id]="3" [currentFocusId]="currentFocusId" [onAnim]="onThirdAnim"></works>
+  <works [id]="3" [currentFocusId]="currentFocusId" [onAnim]="displayThirdAnim"></works>
 </section>
 <section translate-element #fourth="tfe" [startY]="-987" (mousewheel)="moveSection($event, third, null)" id="fourth" style="z-index:6">
-  <portpolio [id]="4" [currentFocusId]="currentFocusId" [onAnim]="onFourthAnim"></portpolio>
+  <portpolio [id]="4" [currentFocusId]="currentFocusId" [onAnim]="displayFourthAnim"></portpolio>
 </section>

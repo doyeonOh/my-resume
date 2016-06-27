@@ -1,4 +1,4 @@
-import { Component, ViewChildren, Input, AfterViewInit, OnChanges } from 'angular2/core';
+import { Component, ViewChildren, Input, AfterViewInit } from 'angular2/core';
 
 import { TranslateElement } from '../directives/translate-element';
 import { AnimationService } from '../services/animation.service';
@@ -10,19 +10,15 @@ import { AnimationService } from '../services/animation.service';
   directives: [ TranslateElement ]
 })
 
-export class MeComponent implements AfterViewInit, OnChanges{
+export class MeComponent implements AfterViewInit{
   @Input() id : string;
   @Input() currentFocusId : string;
-  // @Input() onAnim : boolean;
 
   @ViewChildren('item') items;
 
   constructor(
     private _anim : AnimationService
   ) {}
-
-  ngOnChanges(){
-  }
 
   ngAfterViewInit(){
     this.items.forEach((item, index)=>{
