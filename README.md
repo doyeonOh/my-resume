@@ -1,5 +1,5 @@
 # my-resume
-resume web page 입니다
+resume web page 입니다. http://1.234.88.201:3002/
 
 ###Angular 활용
 
